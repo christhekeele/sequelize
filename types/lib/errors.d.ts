@@ -138,6 +138,17 @@ export class ConnectionError extends BaseError {
   constructor(parent: Error);
 }
 
+
+/**
+ * Thrown when a stale model with optimistic locking enabled is attempted to be saved
+ */
+export class OptimisticLockError extends BaseError {
+  public modelName: string;
+  public values: object;
+  public where: object;
+  constructor(parent: Error);
+}
+
 /**
  * Thrown when a connection to a database is refused
  */
